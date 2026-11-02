@@ -20,7 +20,7 @@ O projeto contempla o gerenciamento de **cardápio e pedidos**, a **personaliza�
 
 ### Funcionalidades opcionais
 
-- [ ] Registro de gorjetas e relatório financeiro.
+- [X] Registro de gorjetas e relatório financeiro.
 - [ ] Controle de transações sem duplicidade.
 - [ ] Relatório de lanches-base distintos.
 - [ ] Geração de arquivo executável.
@@ -75,7 +75,7 @@ src/
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+   git clone https://github.com/mikascss/BoraPedir.git
    ```
 2. Abra o projeto no **IntelliJ IDEA**.
 3. Importe as dependências do **Maven** pelo `pom.xml`.
@@ -97,7 +97,7 @@ mvn test
 
 ## 🎥 Demonstração
 
-**Vídeo do projeto:** [adicionar link da demonstração](https://example.com)
+**Vídeo do projeto:** [link da apresentação](https://drive.google.com/file/d/1xNFeC4LAWhySswbXUCwvJ1VRjsTN6BSw/view?usp=sharing)
 
 ## 📚 Objetivo de aprendizagem
 

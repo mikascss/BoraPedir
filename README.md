@@ -1,4 +1,4 @@
-# 🍔 Comandaê — Sistema de Restaurante
+# 🍔 BoraPedir — Sistema de Restaurante
 
 Sistema de restaurante desenvolvido em **Java**, com interação pelo **console**, para praticar programação orientada a objetos, estruturas de dados, padrões de projeto e testes automatizados.
 

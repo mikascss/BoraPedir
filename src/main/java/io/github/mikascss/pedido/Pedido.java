@@ -1,12 +1,21 @@
 package io.github.mikascss.pedido;
 
 import io.github.mikascss.cardapio.ItemCardapio;
-import io.github.mikascss.cardapio.Lanche;
 import lombok.Getter;
 
 import java.util.ArrayList;
 
 public class Pedido {
+    @Getter
+    private double gorjeta;
+
+    public void setGorjeta(double gorjeta) {
+        if (!Double.isFinite(gorjeta) || gorjeta < 0) {
+            throw new IllegalArgumentException("A gorjeta deve ser um valor não negativo e finito.");
+        }
+        this.gorjeta = gorjeta;
+    }
+
     @Getter
     private int nrIdentificador;
     @Getter
@@ -28,6 +37,13 @@ public class Pedido {
 
     public void adicionarItem(ItemCardapio lanche){
         itens.add(lanche);
+    }
+
+    public void removerItem(int numeroItem) {
+        if (numeroItem < 1 || numeroItem > itens.size()) {
+            throw new IllegalArgumentException("Número do item inválido.");
+        }
+        itens.remove(numeroItem - 1);
     }
 
     public double calcularTotal(){

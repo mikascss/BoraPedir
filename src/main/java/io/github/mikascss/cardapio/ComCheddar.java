@@ -1,11 +1,9 @@
 package io.github.mikascss.cardapio;
 
-public class ComCheddar implements ItemCardapio {
-
-    private ItemCardapio item;
+public class ComCheddar extends AdicionalDecorator {
 
     public ComCheddar(ItemCardapio item){
-        this.item = item;
+        super(item);
     }
 
     @Override

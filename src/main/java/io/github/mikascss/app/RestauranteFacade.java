@@ -3,6 +3,7 @@ package io.github.mikascss.app;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import io.github.mikascss.cardapio.ItemCardapio;
 import io.github.mikascss.cardapio.Lanche;
@@ -26,20 +27,67 @@ public class RestauranteFacade {
     }
 
     public void adicionarItem(int numeroPedido, String nomeLanche) {
+        adicionarItem(numeroPedido, criarLanche(nomeLanche));
+    }
+
+    public Lanche criarLanche(String nomeLanche) {
+        return LancheFactory.criarLanche(nomeLanche);
+    }
+
+    public void adicionarItem(int numeroPedido, ItemCardapio item) {
         Pedido pedido = gerenciador.buscarPedido(numeroPedido);
         if (pedido == null) {
             throw new IllegalArgumentException("Pedido não encontrado.");
         }
-        Double preco = getCardapio().get(nomeLanche);
-        if (preco == null) {
-            throw new IllegalArgumentException("Lanche não encontrado no cardápio.");
+        if (item == null) {
+            throw new IllegalArgumentException("O item não pode ser nulo.");
         }
 
-        pedido.adicionarItem(LancheFactory.criarLanche(nomeLanche));
+        pedido.adicionarItem(item);
+    }
+
+    public Pedido buscarPedido(int numero) {
+        return gerenciador.buscarPedido(numero);
+    }
+
+    public void removerItem(int numeroPedido, int numeroItem) {
+        Pedido pedido = buscarPedido(numeroPedido);
+        if (pedido == null) {
+            throw new IllegalArgumentException("Pedido não encontrado.");
+        }
+        pedido.removerItem(numeroItem);
+    }
+
+    public void cancelarPedido(int numero) {
+        gerenciador.cancelarPedido(numero);
+    }
+
+    public HashSet<String> getCombinacoesDoDia() {
+        return gerenciador.getCombinacoesDoDia();
     }
 
     public ArrayList<Pedido> getPedidos() {
         return gerenciador.getPedidos();
+    }
+
+    public void registrarGorjeta(int numeroPedido, double valor) {
+        Pedido pedido = buscarPedido(numeroPedido);
+        if (pedido == null) {
+            throw new IllegalArgumentException("Pedido não encontrado.");
+        }
+        pedido.setGorjeta(valor);
+    }
+
+    public double calcularTotalGorjetas() {
+        double total = 0;
+        for (Pedido pedido : gerenciador.getPedidos()) {
+            total += pedido.getGorjeta();
+        }
+        return total;
+    }
+
+    public double calcularTotalComGorjetas() {
+        return calcularTotalDoDia() + calcularTotalGorjetas();
     }
 
     public double calcularTotalDoDia() {

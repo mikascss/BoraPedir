@@ -2,6 +2,8 @@ package io.github.mikascss.pedido;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import io.github.mikascss.cardapio.ItemCardapio;
 
 public class GerenciadorPedidos {
     private HashMap<Integer, Pedido> pedidos = new HashMap<>();
@@ -20,6 +22,22 @@ public class GerenciadorPedidos {
 
     public ArrayList<Pedido> getPedidos(){
         return new ArrayList<>(pedidos.values());
+    }
+
+    public void cancelarPedido(int numero) {
+        if (pedidos.remove(numero) == null) {
+            throw new IllegalArgumentException("Pedido não encontrado.");
+        }
+    }
+
+    public HashSet<String> getCombinacoesDoDia() {
+        HashSet<String> combinacoes = new HashSet<>();
+        for (Pedido pedido : pedidos.values()) {
+            for (ItemCardapio item : pedido.getItens()) {
+                combinacoes.add(item.getDescricao());
+            }
+        }
+        return combinacoes;
     }
 
     public double calcularTotalDoDia(){

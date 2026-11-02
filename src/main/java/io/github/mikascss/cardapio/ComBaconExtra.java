@@ -1,10 +1,9 @@
 package io.github.mikascss.cardapio;
 
-public abstract class ComBaconExtra implements ItemCardapio {
-    protected ItemCardapio item;
+public class ComBaconExtra extends AdicionalDecorator {
 
     public ComBaconExtra(ItemCardapio item){
-        this.item = item;
+        super(item);
     }
 
     @Override

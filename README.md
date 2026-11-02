@@ -8,16 +8,15 @@ O projeto contempla o gerenciamento de **cardápio e pedidos**, a **personaliza�
 
 ## 📋 Funcionalidades do projeto
 
-- [ ] **Cardápio:** disponibilizar X-Burger (R$ 16,00), X-Salada (R$ 18,00) e X-Bacon (R$ 22,00).
-- [ ] **Pedidos:** cadastrar pedidos com número gerado automaticamente e nome do cliente.
-- [ ] **Itens do pedido:** adicionar lanches e calcular o total de cada comanda.
-- [ ] **Listagem:** consultar os pedidos registrados durante o dia.
-- [ ] **Fechamento diário:** somar os valores dos pedidos e mostrar o total vendido.
-- [ ] **Adicionais:** acrescentar cheddar (+ R$ 4,00) e bacon extra (+ R$ 6,00), inclusive em combinação.
-- [ ] **Personalização:** retirar queijo, alface, tomate ou cebola sem alterar o preço-base.
-- [ ] **Edição de pedidos:** buscar por número, acrescentar/remover itens e cancelar pedidos.
-- [ ] **Relatório de combinações:** identificar e contar as combinações distintas vendidas no dia.
-- [ ] **Tratamento de entradas inválidas:** impedir que opções incorretas ou dados não numéricos encerrem a aplicação inesperadamente.
+- [X] **Cardápio:** disponibilizar X-Burger (R$ 16,00), X-Salada (R$ 18,00) e X-Bacon (R$ 22,00).
+- [X] **Pedidos:** cadastrar pedidos com número gerado automaticamente e nome do cliente.
+- [X] **Itens do pedido:** adicionar lanches e calcular o total de cada comanda.
+- [X] **Listagem:** consultar os pedidos registrados durante o dia.
+- [X] **Fechamento diário:** somar os valores dos pedidos e mostrar o total vendido.
+- [X] **Adicionais:** acrescentar cheddar (+ R$ 4,00) e bacon extra (+ R$ 6,00), inclusive em combinação.
+- [X] **Personalização:** retirar queijo, alface, tomate ou cebola sem alterar o preço-base.
+- [X] **Edição de pedidos:** buscar por número, acrescentar/remover itens e cancelar pedidos.
+- [X] **Tratamento de entradas inválidas:** impedir que opções incorretas ou dados não numéricos encerrem a aplicação inesperadamente.
 
 ### Funcionalidades opcionais
 
